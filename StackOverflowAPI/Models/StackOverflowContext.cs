@@ -30,7 +30,18 @@ namespace StackOverflowAPI.Models
                 entity.Property(e => e.AnswerId).HasColumnName("answer_id");
 
                 entity.Property(e => e.Answer1)
+                    .IsRequired()
                     .HasColumnName("answer")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AnsweredBy)
+                    .IsRequired()
+                    .HasColumnName("answeredBy")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AnsweredByName)
+                    .IsRequired()
+                    .HasColumnName("answeredByName")
                     .IsUnicode(false);
 
                 entity.Property(e => e.QuestionId).HasColumnName("question_id");
@@ -45,6 +56,16 @@ namespace StackOverflowAPI.Models
             modelBuilder.Entity<Question>(entity =>
             {
                 entity.Property(e => e.QuestionId).HasColumnName("question_id");
+
+                entity.Property(e => e.AskedBy)
+                    .IsRequired()
+                    .HasColumnName("askedBy")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AskedByName)
+                    .IsRequired()
+                    .HasColumnName("askedByName")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Question1)
                     .IsRequired()

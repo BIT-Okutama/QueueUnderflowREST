@@ -12,30 +12,31 @@ using StackOverflowAPI.Models.POST;
 namespace StackOverflowAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class QuestionController : Controller
+    public class AnswerController : Controller
     {
         StackOverflowContext db;
 
-        public QuestionController(StackOverflowContext _context)
+        public AnswerController(StackOverflowContext _context)
         {
             db = _context;
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateQuestionAsync([FromBody]AskQuestion quest)
+        public async Task<IActionResult> CreateAnswerAsync([FromBody]AnswerQuestion ans)
         {
             try
             {
-                Question question = new Question();
-                question.Question1 = quest.question;
-                question.AskedBy = quest.askedBy;
-                question.AskedByName = quest.askedByName;
+                Answer answer = new Answer();
+                answer.QuestionId = ans.question_id;
+                answer.Answer1 = ans.answer;
+                answer.AnsweredBy = ans.answeredBy;
+                answer.AnsweredByName = ans.answeredByName;
 
-                db.Question.Add(question);
+                db.Answer.Add(answer);
                 await db.SaveChangesAsync();
                 return Ok("Success");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -43,11 +44,11 @@ namespace StackOverflowAPI.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Question>>> GetAllQuestions()
+        public async Task<ActionResult<IEnumerable<Answer>>> GetAllAnswers()
         {
             try
             {
-                return await db.Question.ToListAsync();
+                return await db.Answer.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -56,46 +57,45 @@ namespace StackOverflowAPI.Controllers
         }
 
         [HttpGet("{hash}")]
-        public async Task<ActionResult<IEnumerable<Question>>> GetAllQuestionsByHash(string hash)
+        public async Task<ActionResult<IEnumerable<Answer>>> GetAllAnswersByHash(string hash)
         {
             try
             {
-                var question = await db.Question.Where(x => x.AskedBy == hash).ToListAsync();
-                if (question == null)
+                var answer = await db.Answer.Where(x => x.AnsweredBy == hash).ToListAsync();
+                if (answer == null)
                 {
                     return NotFound();
                 }
 
-                return question;
+                return answer;
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Question>> GetQuestionById(int id)
+        public async Task<ActionResult<Answer>> GeAnswerById(int id)
         {
 
             try
             {
-                var question = await db.Question.FindAsync(id);
-                if (question == null)
+                var answer = await db.Answer.FindAsync(id);
+                if (answer == null)
                 {
                     return NotFound();
                 }
 
-                return question;
+                return answer;
 
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
-
 
 
     }
