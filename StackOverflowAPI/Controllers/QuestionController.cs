@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StackOverflowAPI.Models;
 using StackOverflowAPI.Models.POST;
 
@@ -20,7 +21,6 @@ namespace StackOverflowAPI.Controllers
             db = _context;
         }
 
-        // GET: api/<controller>
         [HttpPost("create")]
         public async Task<IActionResult> CreateQuestionAsync([FromBody]AskQuestion quest)
         {
@@ -39,6 +39,43 @@ namespace StackOverflowAPI.Controllers
             }
         }
 
-        
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Question>>> GetAllQuestions()
+        {
+            try
+            {
+                return await db.Question.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Question>> GetQuestionById(int id)
+        {
+
+            try
+            {
+                var question = await db.Question.FindAsync(id);
+                if (question == null)
+                {
+                    return NotFound();
+                }
+
+                return question;
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+
+
     }
 }
