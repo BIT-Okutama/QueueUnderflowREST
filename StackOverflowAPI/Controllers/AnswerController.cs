@@ -56,7 +56,7 @@ namespace StackOverflowAPI.Controllers
             }
         }
 
-        [HttpGet("{hash}")]
+        [HttpGet("hash/{hash}")]
         public async Task<ActionResult<IEnumerable<Answer>>> GetAllAnswersByHash(string hash)
         {
             try
@@ -76,7 +76,7 @@ namespace StackOverflowAPI.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<ActionResult<Answer>> GeAnswerById(int id)
         {
 
