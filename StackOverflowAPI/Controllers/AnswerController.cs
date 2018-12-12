@@ -97,6 +97,27 @@ namespace StackOverflowAPI.Controllers
             }
         }
 
+        [HttpGet("question/id/{id}")]
+        public async Task<ActionResult<Answer>> GetAnswersByQuestionId(int id)
+        {
+
+            try
+            {
+                var answer = await db.Answer.Where(a => a.QuestionId == id).ToListAsync();
+                if (answer == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(answer);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }
