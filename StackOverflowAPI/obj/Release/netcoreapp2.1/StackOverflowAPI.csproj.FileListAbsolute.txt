@@ -1,0 +1,14 @@
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\bin\Release\netcoreapp2.1\StackOverflowAPI.deps.json
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\bin\Release\netcoreapp2.1\StackOverflowAPI.runtimeconfig.json
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\bin\Release\netcoreapp2.1\StackOverflowAPI.runtimeconfig.dev.json
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\bin\Release\netcoreapp2.1\StackOverflowAPI.dll
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\bin\Release\netcoreapp2.1\StackOverflowAPI.pdb
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.csprojAssemblyReference.cache
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.csproj.CoreCompileInputs.cache
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.RazorAssemblyInfo.cache
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.RazorAssemblyInfo.cs
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.AssemblyInfoInputs.cache
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.AssemblyInfo.cs
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.dll
+C:\Users\Syntheus\source\repos\StackOverflowAPI\StackOverflowAPI\obj\Release\netcoreapp2.1\StackOverflowAPI.pdb
